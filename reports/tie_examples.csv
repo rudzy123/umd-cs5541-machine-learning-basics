@@ -1,0 +1,3 @@
+case,neighbor_labels_in_order,educational_prediction,sklearn_prediction,note
+equal_votes,"0,1",0,0,Two neighbors at distance 1 have labels 0 and 1. The smallest label wins.
+equal_distances,1,1,1,Both training rows are distance 1. Stable order keeps training index 0.
