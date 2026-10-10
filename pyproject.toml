@@ -1,0 +1,59 @@
+[project]
+name = "umd-ml"
+version = "0.1.0"
+description = "Educational NumPy implementations of foundational machine learning algorithms."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Rudy M" }]
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Education",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "scikit-learn>=1.4",
+    "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+umd_ml = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q --tb=short"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests", "reports"]
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["umd_ml"]
+
+[tool.ruff.lint.per-file-ignores]
+"reports/generate_reports.py" = ["E402"]
+
+[tool.ruff.format]
+quote-style = "double"

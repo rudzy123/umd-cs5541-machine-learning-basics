@@ -1,0 +1,7 @@
+model,implementation,split,metric,value
+linear_regression,educational,test,mean_squared_error,2.0962335096029178e-30
+linear_regression,sklearn,test,mean_squared_error,2.1792282506730453e-30
+linear_regression,educational,parameters,max_abs_gap_versus_sklearn,8.881784197001252e-16
+knn,educational,test,accuracy,1.0
+knn,sklearn,test,accuracy,1.0
+knn,comparison,test,mismatched_predictions,0.0
